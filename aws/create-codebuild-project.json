@@ -1,8 +1,8 @@
 {
-  "name": "sample-docker-project",
+  "name": "mock-telldus-build",
   "source": {
-    "type": "S3",
-    "location": "codebuild-region-ID-account-ID-input-bucket/DockerSample.zip"
+    "type": "GITHUB",
+    "location": "https://github.com/davidjohansson/mock-telldus"
   },
   "artifacts": {
     "type": "NO_ARTIFACTS"
@@ -14,15 +14,15 @@
     "environmentVariables": [
       {
         "name": "AWS_DEFAULT_REGION",
-        "value": "region-ID"
+        "value": "eu-north-1"
       },
       {
         "name": "AWS_ACCOUNT_ID",
-        "value": "account-ID"
+        "value": "136497237762"
       },
       {
         "name": "IMAGE_REPO_NAME",
-        "value": "Amazon-ECR-repo-name"
+        "value": "mydockerrepo"
       },
       {
         "name": "IMAGE_TAG",
@@ -31,6 +31,5 @@
     ],
     "privilegedMode": true
   },
-  "serviceRole": "arn:aws:iam::account-ID:role/role-name",
-  "encryptionKey": "arn:aws:kms:region-ID:account-ID:key/key-ID"
+  "serviceRole": "arn:aws:iam::136497237762:role/service-role/codebuild-fivepelobuild-service-role"
 }
