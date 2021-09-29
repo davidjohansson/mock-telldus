@@ -22,7 +22,7 @@
       },
       {
         "name": "IMAGE_REPO_NAME",
-        "value": "mydockerrepo"
+        "value": "mock-telldus"
       },
       {
         "name": "IMAGE_TAG",
