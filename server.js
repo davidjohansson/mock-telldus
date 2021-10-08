@@ -9,7 +9,14 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  const hour = new Date().getHours();
+
+  const ret = {
+    basement1: hour + 70 + Math.floor(Math.random() * 3),
+    attic1: hour + 60 + Math.floor(Math.random() * 3)
+  }
+
+  res.send(ret);
 });
 
 app.listen(PORT, HOST);
